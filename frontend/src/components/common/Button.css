@@ -1,0 +1,162 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 136, 204, 0.2);
+}
+
+/* Sizes */
+.btn-small {
+  padding: 6px 12px;
+  font-size: 12px;
+  min-height: 28px;
+}
+
+.btn-medium {
+  padding: 10px 16px;
+  font-size: 14px;
+  min-height: 36px;
+}
+
+.btn-large {
+  padding: 14px 24px;
+  font-size: 16px;
+  min-height: 44px;
+}
+
+/* Variants */
+.btn-primary {
+  background: #0088cc;
+  color: white;
+}
+
+.btn-primary:hover:not(.btn-disabled):not(.btn-loading) {
+  background: #006699;
+}
+
+.btn-secondary {
+  background: #f0f2f5;
+  color: #333;
+}
+
+.btn-secondary:hover:not(.btn-disabled):not(.btn-loading) {
+  background: #e4e6ea;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover:not(.btn-disabled):not(.btn-loading) {
+  background: #c82333;
+}
+
+.btn-success {
+  background: #28a745;
+  color: white;
+}
+
+.btn-success:hover:not(.btn-disabled):not(.btn-loading) {
+  background: #218838;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #0088cc;
+  color: #0088cc;
+}
+
+.btn-outline:hover:not(.btn-disabled):not(.btn-loading) {
+  background: #0088cc;
+  color: white;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #666;
+}
+
+.btn-ghost:hover:not(.btn-disabled):not(.btn-loading) {
+  background: #f0f2f5;
+}
+
+/* States */
+.btn-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-loading {
+  cursor: not-allowed;
+}
+
+.btn-loading .btn-text {
+  opacity: 0;
+}
+
+.btn-full-width {
+  width: 100%;
+}
+
+/* Icons */
+.btn-icon {
+  display: flex;
+  align-items: center;
+}
+
+.btn-icon-left {
+  margin-right: 8px;
+}
+
+.btn-icon-right {
+  margin-left: 8px;
+}
+
+/* Spinner */
+.btn-spinner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Ripple effect */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+.btn:active::before {
+  width: 300px;
+  height: 300px;
+}

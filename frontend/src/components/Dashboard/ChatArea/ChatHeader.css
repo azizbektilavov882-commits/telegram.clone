@@ -1,0 +1,72 @@
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--tg-border-light);
+  background: var(--tg-bg-secondary);
+  backdrop-filter: blur(20px);
+}
+
+.chat-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--tg-accent);
+  color: var(--tg-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.chat-details h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--tg-text-primary);
+}
+
+.status {
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.status.online {
+  color: var(--tg-success);
+}
+
+.status.offline {
+  color: var(--tg-text-muted);
+}
+
+.chat-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--tg-text-muted);
+  transition: var(--transition);
+}
+
+.action-btn:hover {
+  background: var(--tg-bg-primary);
+  color: var(--tg-text-primary);
+}

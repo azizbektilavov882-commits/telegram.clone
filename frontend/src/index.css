@@ -1,0 +1,333 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Telegram Dark Theme Colors */
+  --tg-bg-primary: #17212b;
+  --tg-bg-secondary: #232e3c;
+  --tg-bg-tertiary: #2b5278;
+  --tg-bg-chat: #0e1621;
+  --tg-bg-message-out: #2b5278;
+  --tg-bg-message-in: #182533;
+  --tg-bg-input: #40526d;
+  
+  /* Text Colors */
+  --tg-text-primary: #ffffff;
+  --tg-text-secondary: #aaaaaa;
+  --tg-text-muted: #708499;
+  --tg-text-accent: #6ab7ff;
+  --tg-text-link: #6ab7ff;
+  
+  /* Accent Colors */
+  --tg-accent: #5288c1;
+  --tg-accent-hover: #4a7ba7;
+  --tg-success: #4dcd5e;
+  --tg-danger: #e53e3e;
+  --tg-warning: #f5a623;
+  
+  /* Border Colors */
+  --tg-border: #40526d;
+  --tg-border-light: #2f3a4a;
+  
+  /* Shadow */
+  --tg-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --tg-shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.4);
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 50px;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* Typography */
+  --font-size-xs: 11px;
+  --font-size-sm: 13px;
+  --font-size: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 20px;
+  
+  /* Animation */
+  --transition: all 0.15s ease;
+  --transition-fast: all 0.1s ease;
+  --transition-slow: all 0.3s ease;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--tg-bg-primary);
+  height: 100vh;
+  overflow: hidden;
+  color: var(--tg-text-primary);
+  font-size: var(--font-size);
+  line-height: 1.4;
+}
+
+#root {
+  height: 100vh;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  background: var(--tg-bg-primary);
+}
+
+/* Telegram-style scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Selection styles */
+::selection {
+  background: var(--tg-accent);
+  color: var(--tg-text-primary);
+}
+
+/* Focus styles */
+*:focus {
+  outline: 2px solid var(--tg-accent);
+  outline-offset: 1px;
+}
+
+/* Button focus */
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--tg-accent);
+}
+
+/* Input focus */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--tg-accent);
+  box-shadow: 0 0 0 1px var(--tg-accent);
+}
+
+/* Utility classes */
+.text-primary { color: var(--tg-text-primary); }
+.text-secondary { color: var(--tg-text-secondary); }
+.text-muted { color: var(--tg-text-muted); }
+.text-accent { color: var(--tg-text-accent); }
+
+.bg-primary { background-color: var(--tg-bg-primary); }
+.bg-secondary { background-color: var(--tg-bg-secondary); }
+.bg-tertiary { background-color: var(--tg-bg-tertiary); }
+
+.rounded { border-radius: var(--radius); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-pill { border-radius: var(--radius-pill); }
+
+.shadow { box-shadow: var(--tg-shadow); }
+.shadow-lg { box-shadow: var(--tg-shadow-lg); }
+
+.transition { transition: var(--transition); }
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Telegram-style animations */
+@keyframes slideInRight {
+  from { 
+    opacity: 0;
+    transform: translateX(20px); 
+  }
+  to { 
+    opacity: 1;
+    transform: translateX(0); 
+  }
+}
+
+@keyframes slideInLeft {
+  from { 
+    opacity: 0;
+    transform: translateX(-20px); 
+  }
+  to { 
+    opacity: 1;
+    transform: translateX(0); 
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.9); 
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1); 
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.2s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.2s ease-out;
+}
+
+.fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.scale-in {
+  animation: scaleIn 0.15s ease-out;
+}
+
+/* Telegram-style ripple effect */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.ripple:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Custom scrollbar for chat area */
+.chat-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Loading spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Telegram-style button hover effects */
+.tg-button {
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.tg-button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--tg-shadow);
+}
+
+.tg-button:active {
+  transform: translateY(0);
+}
+
+/* Message bubble animations */
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.message-animation {
+  animation: messageSlideIn 0.2s ease-out;
+}
+
+/* Typing indicator animation */
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+}
+
+.typing-dot {
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) { animation-delay: 0s; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }

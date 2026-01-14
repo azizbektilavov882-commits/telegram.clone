@@ -1,0 +1,125 @@
+.message {
+  display: flex;
+  margin-bottom: 16px;
+  align-items: flex-end;
+  gap: 8px;
+  animation: messageSlideIn 0.2s ease-out;
+}
+
+.message.own {
+  flex-direction: row-reverse;
+}
+
+.message-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--tg-accent);
+  color: var(--tg-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.message-content {
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.message.own .message-content {
+  align-items: flex-end;
+}
+
+.message-sender {
+  font-size: 12px;
+  color: var(--tg-text-accent);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.message-bubble {
+  background: var(--tg-bg-message-in);
+  border-radius: 18px;
+  padding: 12px 16px;
+  box-shadow: var(--tg-shadow);
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.message.own .message-bubble {
+  background: var(--tg-bg-message-out);
+  color: var(--tg-text-primary);
+}
+
+.message-text {
+  word-wrap: break-word;
+  line-height: 1.4;
+  font-size: 14px;
+  color: var(--tg-text-primary);
+}
+
+.message-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.message-time {
+  font-size: 11px;
+  opacity: 0.7;
+  color: var(--tg-text-muted);
+}
+
+.message.own .message-time {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.message-status {
+  display: flex;
+  align-items: center;
+}
+
+.message-status .sent {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+}
+
+.message-status .read {
+  color: var(--tg-success);
+  font-size: 12px;
+}
+
+/* Telegram-style message bubble tails */
+.message-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+}
+
+.message:not(.own) .message-bubble::before {
+  left: -8px;
+  border-right-color: var(--tg-bg-message-in);
+  border-left: none;
+}
+
+.message.own .message-bubble::before {
+  right: -8px;
+  border-left-color: var(--tg-bg-message-out);
+  border-right: none;
+}
+
+/* Hover effects */
+.message-bubble:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--tg-shadow-lg);
+  transition: var(--transition);
+}
