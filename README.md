@@ -172,3 +172,50 @@ Savollar yoki takliflar uchun issue oching yoki pull request yuboring.
 ---
 
 **Eslatma**: Bu loyiha ta'lim maqsadida yaratilgan va production muhitida ishlatishdan oldin qo'shimcha xavfsizlik choralarini ko'rish tavsiya etiladi.
+
+## 🚀 Deployment
+
+### Deploy to Render
+
+1. Fork this repository to your GitHub account
+2. Connect your GitHub account to Render
+3. Create a new Web Service on Render
+4. Connect your forked repository
+5. Use the following settings:
+   - **Build Command**: `npm install && cd frontend && npm install && npm run build && cd ../backend && npm install`
+   - **Start Command**: `cd backend && npm start`
+   - **Environment Variables**:
+     - `NODE_ENV`: `production`
+     - `MONGODB_URI`: Your MongoDB connection string
+     - `JWT_SECRET`: Your JWT secret key
+     - `FRONTEND_URL`: Your Render app URL
+
+### Environment Variables
+
+Make sure to set these environment variables in your deployment platform:
+
+```
+NODE_ENV=production
+PORT=10000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+FRONTEND_URL=your_deployed_app_url
+```
+
+### Live Demo
+
+🌐 **Live Site**: [https://telegram-clone-aziz.onrender.com](https://telegram-clone-aziz.onrender.com)
+
+## 📱 Features
+
+- ✅ User Authentication (Register/Login)
+- ✅ Real-time Messaging with Socket.io
+- ✅ User Search and Contact Management
+- ✅ Message History and Chat Lists
+- ✅ Responsive Design
+- ✅ MongoDB Integration
+- ✅ JWT Authentication
+- ✅ File Upload Support
+- ✅ Online/Offline Status
+- ✅ Message Read Receipts
+- ✅ Typing Indicators
